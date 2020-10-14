@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="background-color: green;">box</div>
+    <div class="box">box</div>
+    <div id="nav">
+        <ul>
+            <li>Home</li>
+            <li>Product</li>
+        </ul>
+    </div>
+    <script>
+        // 1. getElementsByClassName
+        var class1 = document.getElementsByClassName('box') // 伪数组
+        console.log(class1);
+
+        // 2. 返回指定的第一个元素
+        var c = document.querySelector('.box')
+        console.log(c);
+        var  i = document.querySelector('#nav')
+        console.log(i);
+        var l = document.querySelector('li')
+        console.log(l);
+
+        // 3. 返回指定所有的元素
+        var ca = document.querySelectorAll('.box')
+        console.log(ca);
+        var  ia = document.querySelectorAll('#nav')
+        console.log(ia);
+        console.log(ia[0]);
+        var la = document.querySelectorAll('li')
+        console.log(la);
+
+
+    </script>
+</body>
+</html>
