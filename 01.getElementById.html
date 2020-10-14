@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="timer"> 2020-10-14</div>
+    <script>
+        // 1. 文档是从上往下加载
+        var timer = document.getElementById('timer')
+        console.log(timer);
+        console.log(typeof(timer));
+        console.dir(timer)
+        console.log(timer.textContent);
+        timer.textContent = '2020-10-15'
+        console.log(timer.textContent);
+    </script>
+
+</body>
+
+</html>
