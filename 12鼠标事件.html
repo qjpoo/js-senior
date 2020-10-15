@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标按下和鼠标抬起</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #move {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            font-family: microsoft yahei;
+            position: absolute;
+            top: 200px;
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="move"></div>
+    <script type="text/javascript">
+        var m = document.getElementById('move');
+        //鼠标按下
+        m.onmousedown = function() { //down向下
+            alert('鼠标按下啦 思密达');
+        }
+
+        //鼠标抬起
+        m.onmouseup = function() { //up向上
+            alert('鼠标抬起来啦 思密达');
+        }
+
+        //尺寸
+        var l = m.offsetLeft; //获取当前元素相对于父级元素x轴的偏移量
+        var t = m.offsetTop; //获取当前元素相对于父级元素y轴的偏移量
+
+        var w = m.offsetWidth; //快速获取元素的宽度
+        var h = m.offsetHeight; //获取元素的高度
+    </script>
+</body>
+
+</html>

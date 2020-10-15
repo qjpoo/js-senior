@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>1</p>
+    <img src="imgs/noon.jpg" alt="">
+
+
+    <script>
+        // morning noon afternoon
+        // 根据不同的时间段来显示不同的图片和问候语言
+        // 上午 noon
+        // 下午 afternoon
+        // 晚上 evening
+
+        var p = document.querySelector('p')
+        var img = document.querySelector('img')
+        var dt = new Date()
+        var currTime = dt.getHours()
+        if (currTime < 12) {
+            p.innerHTML = '<strong>主人上午好!</strong>'
+            img.src = 'imgs/noon.jpg'
+        } else if (currTime <= 18) {
+            p.innerHTML = '<strong>主人下午好!</strong>'
+            img.src = 'imgs/afternoon.jpg'
+        } else {
+            p.innerHTML = '<strong>主人晚上好!</strong>'
+            img.src = 'imgs/evening.jpg'
+        }
+    </script>
+
+</body>
+
+</html>

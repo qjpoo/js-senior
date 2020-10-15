@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+            margin-top: 20px;
+            width: 300px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="chiling">林志铃</button>
+    <button id="y">北条麻妃</button>
+    <button id="m">明日花</button>
+    <img src="imgs/01.jpg" alt="" title="">
+    <script>
+        var chiling = document.getElementById('chiling')
+        var y = document.getElementById('y')
+        var m = document.getElementById('m')
+        var img = document.querySelector('img')
+        chiling.onclick = function() {
+            img.src = 'imgs/01.jpg';
+            img.title = '林志铃'
+
+        }
+        y.onclick = function() {
+            img.src = 'imgs/02.jpg'
+            img.title = '北条麻妃'
+        }
+        m.onclick = function() {
+            img.src = 'imgs/03.jpg'
+            img.title = '明日花'
+        }
+    </script>
+
+</body>
+
+</html>

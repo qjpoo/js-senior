@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        p {
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            color: blue;
+            background-color: silver;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div>show time</div>
+    <p>show time</p>
+    <script>
+        // 1. 获取元素
+        var btn = document.querySelector('button')
+        var div = document.querySelector('div')
+        var p = document.querySelector('p')
+            // 2. 注册事件
+        btn.onclick = function() {
+            div.innerHTML = getTime();
+        }
+
+        p.innerHTML = getTime()
+
+        function getTime() {
+            var dt = new Date()
+            var y = dt.getFullYear();
+            var m = dt.getMonth()
+            m = parseInt(m) + 1
+            m = m < 10 ? '0' + m : m
+            var d = dt.getDate();
+            d = d < 10 ? '0' + d : d
+            var h = dt.getHours()
+            h = h < 10 ? '0' + h : h
+            var mi = dt.getMinutes()
+            mi = mi < 10 ? '0' + mi : mi
+            var s = dt.getSeconds()
+            s = s < 10 ? '0' + s : s
+                // 星期
+            var arr = ['星期天', '星期一', '星期二', '星期三', '星期三', '星期四', '星期五', '星期六']
+            var ds = dt.getDay()
+            return y + '年' + m + '月' + d + '号' + ' ' + h + ':' + mi + ':' + s + ' ' + arr[ds + 1]
+        }
+    </script>
+
+</body>
+
+</html>
