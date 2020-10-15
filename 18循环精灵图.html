@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 100px auto;
+            /* border: 1px solid #ccc; */
+            width: 216px;
+            text-align: center;
+        }
+
+        li {
+            float: left;
+            list-style: none;
+            background-color: gray;
+            width: 24px;
+            height: 24px;
+            margin: 15px;
+            background: url(imgs/sprite.png) no-repeat;
+            line-height: 24px;
+        }
+          
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">1</a></li>
+        </ul>
+    </div>
+    <script>
+        // 得到所有的li
+        var li = document.querySelectorAll('li')
+        for (var i = 0; i < li.length; i++) {
+            var y = i * 44;
+            li[i].style.backgroundPosition = '0 -' + y + 'px';
+
+        }
+    </script>
+
+</body>
+
+</html>

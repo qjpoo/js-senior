@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" value="123" id="">
+    <script>
+        var txt = document.querySelector('input')
+        var txt_value = txt.value
+        txt.onfocus = function () {
+            this.value = '';
+            // 获得焦点,里面的文字要变深
+            this.style.color = '#333'
+        }
+        txt.onblur = function () {
+            // 失去焦点, 如果value是空,才还原
+            if (this.value == '') {
+                this.value = txt_value;
+            }
+            // 失去焦点,里面的文字要变浅
+            this.style.color = '#999'
+        }
+    </script>
+</body>
+
+</html>
