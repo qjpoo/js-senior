@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .change {
+            background-color: purple;
+            color: #fff;
+            font-size: 35px;
+            margin-top: 100px;
+            text-align: center;
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">你好吗?</div>
+    <script>
+        var div = document.querySelector('div')
+        div.onclick = function() {
+            // this.style.backgroundColor = 'purple'
+            // this.style.color = '#fff'
+            // this.style.fontSize = '35px';
+            // this.style.marginTop = '100px'
+            // this.style.width = '300px';
+            // this.style.textAlign = 'center';
+            this.className = 'change'; // 注意 change没有.  , first会被覆盖
+
+            // 保留原先的类,加个空格,多类名选择器
+            this.className = 'first change'
+        }
+    </script>
+
+</body>
+
+</html>

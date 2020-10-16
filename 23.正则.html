@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //
+        var patt1 = /\d+/
+        console.log(patt1.test('abcd')) // false
+
+        // 
+        var patt2 = /[a-z|A-Z]+/
+        console.log(patt2.test('abc123jkj')); // true
+        console.log(patt2.test('abc123Ajkj')); // true
+        console.log(patt2.test('a!bc123Ajkj')); // true
+        console.log(patt2.test('!&*^%')); // false
+
+        // JS 判断字符串是否全部为数字
+        // var patt3 = /[0-9]+/
+        var patt3 = /^\d+$/
+        console.log('是否全为数字: ', patt3.test('dkf0'));
+        console.log('是否全为数字: ', patt3.test('0989980'));
+
+        // JS 判断字符串是否全部为字母
+        var patt4 = /^[a-zA-Z]+$/
+        document.writeln('全为字母: ', patt4.test('abDIU'))
+        document.writeln('<br>')
+        document.writeln('全为字母: ', patt4.test('ab99DIU'))
+        document.writeln('<br>')
+
+        //  JS 判断输入是否为数字、字母、下划线组成
+        var patt5 = /^\w+$/
+        document.writeln('为字母,数字,下划线组成: ', patt5.test('abDI999__U'))
+        document.writeln('<br>')
+        document.writeln('为字母,数字,下划线组成: ', patt5.test('ab99DI$$#U'))
+    </script>
+
+</body>
+
+</html>
