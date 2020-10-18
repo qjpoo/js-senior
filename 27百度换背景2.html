@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(imgs/bg0.jpg) no-repeat;
+        }
+        .nav {
+            width: 410px;
+            /* height: 125px; */
+            margin: 100px auto;
+            background-color: #fff;
+            overflow: hidden;
+            text-align: center;
+
+        }
+        img {
+            width: 100px;
+        }
+        ul li {
+            float:left;
+            list-style: none;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+        h3 {
+            background-color: silver;
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+    <h3>点击换背景</h3>
+        <ul>
+            <li><img src="imgs/bg0.jpg" alt=""></li>
+            <li><img src="imgs/bg1.jpg" alt=""></li>
+            <li><img src="imgs/bg2.jpg" alt=""></li>
+            <li><img src="imgs/bg3.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script>
+        // 
+        var imgs = document.querySelectorAll('.nav').querySelectorAll('img')
+
+        for(var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function() {
+                document.body.style.backgroundImage = 'url(' + this.src +')'
+            }
+        }
+    </script>
+    
+</body>
+</html>

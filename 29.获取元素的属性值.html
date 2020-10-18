@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" index="1"></div>
+    <script>
+
+        var div = document.getElementById('div')
+        // 得到属性
+        console.log(div.id);
+        console.log(div.index); // undefined
+        console.log(div.getAttribute('index'));
+
+        // 设置属性
+        div.id = 'test';
+        div.className = 'testClass01'
+        div.setAttribute('index', '2')
+        div.setAttribute('class', 'testClass02') // 注意是class 不是className
+
+        // remove
+        div.removeAttribute('index')
+        div.removeAttribute('class')
+    </script>
+    
+</body>
+</html>

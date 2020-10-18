@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bg {
+            width: 650px;
+            margin: 100px auto;
+
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="bg">
+        <img src="imgs/bg0.jpg" alt="">
+        <img src="imgs/bg1.jpg" alt="">
+        <img src="imgs/bg2.jpg" alt="">
+        <img src="imgs/bg3.jpg" alt="">
+    </div>
+    <script>
+        var imgs = document.querySelectorAll('img')
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = function () {
+                console.log(this.src);
+                // document.body.style.background = '';
+                // document.body.style.background = 'url(imgs/bg' + parseInt(i -1 ) + '.jpg) no-repeat'
+                document.body.style.background = 'url(' + this.src +')'
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
