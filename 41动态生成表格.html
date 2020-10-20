@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var data = [{
+            name: '北条麻妃',
+            科目: 'javascript',
+            score: 100,
+        }, {
+            name: '明日花',
+            科目: 'javascript',
+            score: 70,
+        }, {
+            name: '林志铃',
+            科目: 'javascript',
+            score: 90,
+        }, {
+            name: '张学友',
+            科目: 'javascript',
+            score: 60,
+        }, ]
+
+        var tbody = document.querySelector('tbody')
+        for (var i = 0; i < data.length; i++) {
+            // 创建tr
+            var tr = document.createElement('tr')
+            tbody.append(tr)
+
+            // 创建td
+            for (var k in data[i]) {
+                var td = document.createElement('td')
+                td.innerHTML = data[i][k]
+                    // console.log(data[i][k]);
+                tr.appendChild(td)
+            }
+            // 添加删除按纽
+            var td = document.createElement('td')
+            td.innerHTML = '<a href="javascript:;">Delete</a>'
+            tr.appendChild(td)
+        }
+
+        // 当单击delete时, 删除该行
+        var aLink = document.querySelectorAll('a')
+        for (var j = 0; j < aLink.length; j++) {
+            aLink[j].onclick = function() {
+                var msg = '您真的确定要删除吗？\n\n请确认';
+                if (confirm(msg) == true) {
+                    var tbody = document.querySelector('tbody')
+                    tbody.removeChild(this.parentNode.parentNode)
+                } else {
+                    return false;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

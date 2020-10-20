@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            width: 400px;
+            list-style: none;
+            background-color: silver;
+            text-indent: 2em;
+        }
+        
+        li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul></ul>
+    <a href=""></a>
+
+    <script>
+        var btn = document.querySelector('button')
+        var txt = document.querySelector('textarea')
+        var ul = document.querySelector('ul')
+
+
+        btn.onclick = function() {
+            if (txt.value == '') {
+                alert('内容为空, 写点什么吧');
+                return false;
+            } else {
+                v = txt.value;
+                // textarea里面的内容
+                li = document.createElement('li')
+                li.innerHTML = v + "<a href='javascript:;'>Delete</a>"
+                ul.insertBefore(li, ul.children[0])
+                var allA = document.querySelectorAll('a')
+                for (var i = 0; i < allA.length; i++) {
+                    allA[i].onclick = function() {
+                        // 要删除li和a, 必须要站在ul角度上,删除它的子节点li, this就是代表当前的a,它的你节点就是li
+                        ul.removeChild(this.parentNode)
+                    }
+                }
+                txt.value = ''
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

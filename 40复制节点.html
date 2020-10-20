@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1111111</li>
+        <li>2222222</li>
+        <li>3333333</li>
+        <li>4444444</li>
+    </ul>
+
+    <script>
+        // var lis = document.querySelector('ul').querySelectorAll('li')
+        var ul = document.querySelector('ul')
+        var li = document.querySelector('ul').children
+        var lili = li[0].cloneNode(true)
+        ul.appendChild(lili)
+    </script>
+
+</body>
+
+</html>

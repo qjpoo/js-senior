@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            width: 400px;
+            list-style: none;
+            background-color: silver;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul></ul>
+
+    <script>
+        var btn = document.querySelector('button')
+        var txt = document.querySelector('textarea')
+        var ul = document.querySelector('ul')
+
+        // 格式化日期
+        // var d = new Date()
+        // console.log(d.getFullYear()); // 2020
+        // console.log(d.getMonth()); // 月份是从0-11  9
+        // console.log(d.getMonth() + 1); // 月份是从0-11  10
+        // console.log(d.getDate()); // 13号
+        // console.log('getDay ' + d.getDay()); // 获取是星期2
+        // console.log(d.getHours());
+        // console.log(d.getMinutes());
+        // console.log(d.getSeconds());
+        // var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        // console.log('今天是: ' + d.getFullYear() + '年' + parseInt(d.getMonth() + 1) + '月' + d.getDate() + '日' + d.getHours() + '时' + d.getMinutes() + '分' + d.getSeconds() + '秒' + week[d.getDay()]);
+
+        // // 要求封闭一个函数返回当前的时分秒 格式为 08:08:08
+        // function returnHour() {
+        //     var h = d.getHours()
+        //     h = h < 10 ? '0' + h : h
+        //     var m = d.getMinutes()
+        //     m = m < 10 ? '0' + m : m
+        //     var s = d.getSeconds()
+        //     s = s < 10 ? '0' + s : s
+        //     return h + ':' + m + ':' + s
+        // }
+
+        btn.onclick = function() {
+            if (txt.value == '') {
+                alert('内容为空, 写点什么吧');
+                return false;
+            } else {
+                v = txt.value;
+                // textarea里面的内容
+                li = document.createElement('li')
+                    // date
+                    // dt = returnHour()
+                li.innerHTML = v
+                    // li.innerHTML = v + '         ' + dt;
+                ul.insertBefore(li, ul.children[0])
+                txt.value = ''
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>123</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul')
+        var li = document.createElement('li')
+        ul.appendChild(li)
+
+        // 在li 123前面增加一个元素
+        var lili = document.createElement('li')
+        ul.insertBefore(lili, ul.children[0])
+        ul.children[0].innerHTML = 'xxoo'
+    </script>
+</body>
+
+</html>
