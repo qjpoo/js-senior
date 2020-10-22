@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1111111</li>
+        <li>222222222</li>
+        <li>333333333</li>
+        <li>444444444</li>
+        <li>55555555</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul')
+        ul.addEventListener('click', function(e) {
+            // alert(e.target)
+            // console.log(e.target.innerHTML);
+            console.log(e.target.tagName);
+            for (var i = 0; i < ul.children.length; i++) {
+                ul.children[i].style.backgroundColor = ''
+            }
+            if (e.target.tagName != 'UL') {
+                e.target.style.backgroundColor = 'silver'
+            }
+        })
+    </script>
+
+</body>
+
+</html>

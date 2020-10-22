@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">xxoo</div>
+
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+    <script>
+        // 总结: 
+        // 1. this是绑定的元素,比如是div, ul  
+        // 2. e.target是点击的元素,即触发事件的元素
+        var div = document.querySelector('.box')
+        div.onclick = function(e) {
+            console.log(e.target); // <div class="box">xxoo</div>
+            console.log(this); // <div class="box">xxoo</div>
+            console.log(e.type); // click
+        }
+
+        var ul = document.querySelector('ul')
+        ul.addEventListener('click', function(e) {
+            console.log(e.target); // li
+            console.log(this); // ul
+        })
+    </script>
+</body>
+
+</html>

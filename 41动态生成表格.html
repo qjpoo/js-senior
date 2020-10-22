@@ -76,12 +76,13 @@
             }
             // 添加删除按纽
             var td = document.createElement('td')
-            td.innerHTML = '<a href="javascript:;">Delete</a>'
+            td.innerHTML = '<a class="edit" href="javascript:;">Edit</a> <a class="delete" href="javascript:;">Delete</a>'
             tr.appendChild(td)
         }
 
         // 当单击delete时, 删除该行
-        var aLink = document.querySelectorAll('a')
+        var aLink = document.getElementsByClassName('delete')
+        console.log(aLink);
         for (var j = 0; j < aLink.length; j++) {
             aLink[j].onclick = function() {
                 var msg = '您真的确定要删除吗？\n\n请确认';
@@ -92,6 +93,32 @@
                     return false;
                 }
             }
+        }
+
+        // 当单击edit时, 编辑
+        var aEdit = document.getElementsByClassName('edit')
+        for (var j = 0; j < aEdit.length; j++) {
+            aEdit[j].onclick = function() {
+                //console.log(this.parentNode.previousElementSibling.innerHTML)
+                tdValue = this.parentNode.previousElementSibling.innerHTML
+                if (!isNaN(tdValue)) {
+                    this.parentNode.previousElementSibling.innerHTML = '<input onblur="changeOper(this,this.parentNode)"  type="text" value=' + tdValue + '>'
+                }
+                // // 行到所有的input
+                // var ipt = document.querySelector('input')
+                //     //console.log(ipt);
+                // ipt.onblur = function() {
+                //     console.log(this.value, tdValue);
+                //     tdValue = this.value;
+                // }
+            }
+
+        }
+
+        function changeOper(inp, tr) {
+            // console.log(inp.value, tr.innerHTML);
+            tr.innerHTML = inp.value;
+
         }
     </script>
 

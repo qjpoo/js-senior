@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            background: silver;
+            margin: 100px auto;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            margin: 50px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="father">
+        <div class="son">son儿子</div>
+    </div>
+
+    <script>
+        var f = document.querySelector('.father')
+        var s = document.querySelector('.son')
+        f.addEventListener('click', function(e) {
+            alert('father')
+        })
+
+        s.addEventListener('click', function(e) {
+            alert('son');
+            e.stopPropagation()
+        })
+
+        document.addEventListener('click', function(e) {
+            alert('document')
+        })
+    </script>
+</body>
+
+</html>

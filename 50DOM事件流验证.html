@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father,
+        .father1 {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            background: silver;
+            margin: 100px auto;
+        }
+        
+        .son,
+        .son1 {
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+            margin: 50px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+
+    <div class="father1">
+        <div class="son1">son1盒子</div>
+    </div>
+    <script>
+        // dom 事件流 三个阶段
+        // 1. js代码中只能执行捕获或者冒泡其中的一个阶段
+        // 2. onclick和attachEvent(ie) 只能得到冒泡阶段
+
+        // 冒泡阶段, 从小到大 son ==> father ==> body ==> html ==> document
+        var son = document.querySelector('.son')
+        son.addEventListener('click', function() {
+            alert('son ...')
+        })
+
+        var father = document.querySelector('.father')
+        father.addEventListener('click', function() {
+            alert('father ...')
+        })
+        document.addEventListener('click', function() {
+            alert('document ...')
+        })
+
+        // 捕获阶段
+        // 由大到小 document ==> html ==> body ==> father ==> son
+        // var son1 = document.querySelector('.son1')
+        // son1.addEventListener('click', function() {
+        //     alert('son1 ...')
+        // }, true)
+
+        // var father1 = document.querySelector('.father1')
+        // father1.addEventListener('click', function() {
+        //     alert('father1 ...')
+        // }, true)
+    </script>
+
+</body>
+
+</html>
